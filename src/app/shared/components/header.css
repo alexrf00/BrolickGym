@@ -25,6 +25,7 @@ header {
 /* 4) An inner container to center content & add horizontal padding */
 .header-content {
   display: flex;
+  overflow-x: auto;
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;      /* Original 10% padding goes here */
