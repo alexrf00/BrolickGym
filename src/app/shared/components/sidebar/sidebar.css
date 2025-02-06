@@ -1,0 +1,65 @@
+/* Sidebar for mobile */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hidden by default */
+    height: 100%;
+    width: 70%; /* Adjust width as needed */
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease; /* Smooth slide-in */
+  }
+  
+  .sidebar--open {
+    left: 0; /* Slide in when open */
+  }
+  
+  .sidebar .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  
+  .sidebar .nav__links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .sidebar .nav__links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar .nav__links li a:hover {
+    color: #f28423;
+  }
+  
+  .sidebar .cta button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f28423;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar .cta button:hover {
+    background-color: #f0994c;
+  }
+  

@@ -1,10 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-oswald: 'Oswald', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+  font-family: var(--font-oswald);
+}
+
+p {
+  font-family: var(--font-montserrat);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,4 +24,9 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
