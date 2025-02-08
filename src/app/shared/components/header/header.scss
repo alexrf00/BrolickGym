@@ -4,12 +4,12 @@
   .header-container{
     height: 96px;
     display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+  .burger{
+    display: none;
+  }
   .navLink a, .nav-link_button a{
     text-decoration: none;
     color: inherit;
@@ -19,7 +19,11 @@
   .nav-link_button{
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap:10px;
+  }
+  .navLink{
+    display: flex;
+    gap:10px;
   }
   /* Logo container */
   .icon_container {

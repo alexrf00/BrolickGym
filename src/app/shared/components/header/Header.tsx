@@ -21,7 +21,8 @@ const Header = () => {
 
         <div className="header-container">
           <span className="navLink">
-            <a href="#">location</a>
+            <a href="#">Location</a>
+            <a href="#">Blog</a>
           </span>
 
           {/* Burger Icon for Mobile */}
