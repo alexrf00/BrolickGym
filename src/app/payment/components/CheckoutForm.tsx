@@ -1,4 +1,3 @@
-"use client";
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 
 const CheckoutForm = () => {

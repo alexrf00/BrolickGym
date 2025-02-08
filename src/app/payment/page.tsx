@@ -1,5 +1,4 @@
-"use client";
-import React, { createContext } from 'react';
+'use client';
 import PaymentForm from '@/app/payment/components/PaymentForm';
 
 export default function PaymentPage() {
