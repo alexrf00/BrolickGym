@@ -6,8 +6,7 @@ export default function HomePage() {
       backgroundSize: 'cover',
       minHeight: '570px'
     }}>
-      <h1>Welcome to Brolick Gym</h1>
-      <p>Achieve your fitness goals with us.</p>
+      <p style={{color:'white', margin:'0'}}>Hello</p>
     </div>
   );
 }
