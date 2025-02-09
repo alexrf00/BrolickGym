@@ -22,9 +22,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${oswald.variable} ${montserrat.variable}`}>
-        <div className='home-container'>
+        {/* <div className='home-container'>
           <img src="/assets/images/Untitled.png" alt="man training" />
-        </div>
+        </div> */}
       <body>
         <Header />
         <main>{children}</main>
