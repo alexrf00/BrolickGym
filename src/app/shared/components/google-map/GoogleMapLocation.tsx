@@ -13,7 +13,7 @@ const gymLocation = {
   lng: -74.005974, // Replace with actual longitude
 };
 
-const GOOGLE_MAPS_API_KEY = process.env.SECRET_GOOGLE_MAPS_API || "";
+const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || "";
 
 const GoogleMapComponent = () => {
   return (
