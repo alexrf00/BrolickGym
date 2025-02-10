@@ -2,7 +2,7 @@
 
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import '@/app/shared/components/google-map/GoogleMapLocation.scss'
+import '@/app/shared/components/google-map/googleMapLocation.scss'
 const containerStyle = {
   width: "100%",
   height: "300px", // Adjust height as needed
