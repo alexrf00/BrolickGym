@@ -1,0 +1,32 @@
+.navigation-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .map-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  
+  .google-maps {
+    background-color: #4285f4;
+  }
+  
+  .waze {
+    background-color: #06c755;
+  }
+  
+  .apple-maps {
+    background-color: #000;
+  }
+  
+  .map-button:hover {
+    opacity: 0.8;
+  }

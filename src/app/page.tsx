@@ -1,7 +1,8 @@
 import GoogleMapLocationComponent from "@/app/shared/components/google-map/GoogleMapLocation";
 
-const gymLatitude = 40.712776; // Replace with actual latitude
-const gymLongitude = -74.005974; // Replace with actual longitude
+const gymLatitude = 40.6802279; // Replace with actual latitude
+const gymLongitude = -73.8839788; // Replace with actual longitude
+
 export default function HomePage() {
   return (
     <div style={{
