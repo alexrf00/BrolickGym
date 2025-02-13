@@ -1,19 +1,16 @@
 import GoogleMapLocationComponent from "@/app/shared/components/google-map/GoogleMapLocation";
+import GetStarted from '@/app/shared/components/get-started/get-started';
+
 import '@/app/page.scss'
 const gymLatitude = 40.6802279; // Replace with actual latitude
 const gymLongitude = -73.8839788; // Replace with actual longitude
 
 export default function HomePage() {
   return (
-    <div style={{
-      backgroundColor: 'rgb(246, 246, 246)',
-      backgroundImage: 'url("/assets/images/manRowingB.png")',
-      backgroundSize: 'cover',
-      minHeight: '570px'
-    }}>
+
       <div className="home-container">
         <div className="googleMap-container">
-          <p>Ready to be fit?<br/> We are waiting for you</p>
+          <GetStarted/>
           <GoogleMapLocationComponent />
           {/* Navigation Buttons */}
           <div className="navigation-buttons">
@@ -44,6 +41,5 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

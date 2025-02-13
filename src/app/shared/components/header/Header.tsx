@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import '@/app/shared/components/header/header.scss';
-import Sidebar from '@/app/shared/components/sidebar/Sidebar'
+import Sidebar from '@/app/shared/components/sidebar/Sidebar';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,9 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header >
       <nav className="nav-container">
-
         <div className="header-container">
           <span className="navLink">
             <a href="#">Location</a>
@@ -51,7 +49,6 @@ const Header = () => {
         {/* Sidebar Component */}
         <Sidebar isOpen={menuOpen} onClose={closeMenu} />
       </nav>
-    </header>
   );
 };
 

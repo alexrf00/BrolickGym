@@ -1,17 +1,4 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-oswald: 'Oswald', sans-serif;
-  --font-montserrat: 'Montserrat', sans-serif;
-}
 
-h1, h2 {
-  font-family: var(--font-oswald);
-}
-
-p {
-  font-family: var(--font-montserrat);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,7 +9,6 @@ p {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Oswald, Arial, Helvetica, sans-serif;
   margin:0;
 }
 

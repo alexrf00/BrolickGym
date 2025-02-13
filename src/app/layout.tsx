@@ -1,6 +1,7 @@
 import './globals.css';
 import Header from '@/app/shared/components/header/Header';
-import { Oswald, Montserrat } from 'next/font/google';
+import { Oswald } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
 
 // Define font styles
 const oswald = Oswald({
@@ -9,11 +10,6 @@ const oswald = Oswald({
   variable: '--font-oswald', // Custom CSS variable (optional)
 });
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['300', '400', '700'],
-  variable: '--font-montserrat',
-});
 export const metadata = {
   title: 'Brolick Gym',
   description: 'Your fitness journey starts here.',
@@ -21,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${oswald.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${GeistSans.className} ${oswald.variable}`}>
         {/* <div className='home-container'>
           <img src="/assets/images/Untitled.png" alt="man training" />
         </div> */}

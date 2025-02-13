@@ -15,7 +15,7 @@ const gymLocation = {
 
 const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || "";
 
-const GoogleMapComponent = () => {
+const GoogleMapLocation = () => {
   return (
     <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
       <GoogleMap mapContainerStyle={containerStyle} center={gymLocation} zoom={15}  options={{
@@ -28,4 +28,4 @@ const GoogleMapComponent = () => {
   );
 };
 
-export default GoogleMapComponent;
+export default GoogleMapLocation;
