@@ -1,36 +1,42 @@
-.greatingContainer{
-    background: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.5), /* top overlay */
-      rgba(0, 0, 0, 0.5)  /* bottom overlay */
-    ), 
-    url('/assets/images/manRowingB.png') 
-    center center 
-    no-repeat;
+.greatingContainer {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5),
+      /* top overlay */
+      rgba(0, 0, 0, 0.5)
+      /* bottom overlay */
+    ),
+    url('/assets/images/manRowingB.png') center center no-repeat;
   background-size: cover;
   min-height: 500px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-    .homeTxt{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        @media (min-width: 768px) {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
-        }
-        .greatingTxt{
-            margin: 0rem;
-        }
-        .invitingTxt{
-            width: 61%;
-            text-align: center;
-        margin: 0rem;
-        }
+  .homeTxt {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .greatingTxt {
+      margin: 0rem;
+      letter-spacing: -0.05em;
+      @media (min-width: 1024px) {
+        font-size: 3.75rem;
+        line-height: 1;
+      }
+    }
+
+    .invitingTxt {
+
+      @media (min-width: 768px) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+
+      width: 61%;
+      text-align: center;
+      margin: 0rem;
     }
   }
+}

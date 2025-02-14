@@ -1,11 +1,8 @@
 
 import '@/app/shared/components/get-started/get-started.scss'
 const GetStarted = () => {
-
     return (
         <div className="greatingContainer">
-
-
             <div className="homeTxt">
                 <h1 className="greatingTxt">
                     Welcome to Acme Fitness
