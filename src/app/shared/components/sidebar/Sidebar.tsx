@@ -2,6 +2,7 @@
 
 import React from 'react';
 import '@/app/shared/components/sidebar/sidebar.scss';
+import Image from 'next/image';
 
 interface SidebarProps {
   isOpen: boolean; // Controls whether the sidebar is visible
@@ -14,8 +15,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
       {/* Logo Section */}
       <div className="icon_container">
-        <img src="/assets/images/brolickLogoRotate.png" alt="icon" className="logo" />
-        <img src="/assets/images/brolickTitleRotate.png" alt="icon" className="title" />
+      <Image src="/assets/images/brolickLogoRotate.png" alt="icon" objectFit='contain' width={50} height={30} className="logo" />
+      <Image src="/assets/images/brolickTitleRotate.png" alt="icon" objectFit='contain'  width={80} height={30} className="title" />
       </div>
       <div className="sidebar-sub-container">
         <div className="button-container">
