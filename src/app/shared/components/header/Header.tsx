@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import '@/app/shared/components/header/header.scss';
 import Sidebar from '@/app/shared/components/sidebar/Sidebar';
+import Image from 'next/image';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,8 +32,8 @@ const Header = () => {
           </div>
           {/* Logo Section */}
           <div className="icon_container">
-            <img src="/assets/images/brolickLogo.png" alt="icon" className="logo" />
-            <img src="/assets/images/brolickTitle.png" alt="icon" className="title" />
+            <Image src="/assets/images/brolickLogo.png" alt="icon" objectFit='contain' width={50} height={30} className="logo" />
+            <Image src="/assets/images/brolickTitle.png" alt="icon" objectFit='contain'  width={80} height={30} className="title" />
           </div>
 
           <div className="nav-link_button">
