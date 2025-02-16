@@ -1,6 +1,6 @@
 
-import '@/app/shared/components/get-started/get-started.scss'
-const GetStarted = () => {
+import '@/app/shared/components/hero/hero.scss'
+const Hero = () => {
     return (
         <div className="greatingContainer">
             <div className="homeTxt">
@@ -16,4 +16,4 @@ const GetStarted = () => {
     );
 };
 
-export default GetStarted;
+export default Hero;
