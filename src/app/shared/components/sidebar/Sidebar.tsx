@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import '@/app/shared/components/sidebar/sidebar.scss';
+import '@/app/shared/components/sidebar/sideBar.scss';
 import Image from 'next/image';
 
 interface SidebarProps {
@@ -9,7 +9,7 @@ interface SidebarProps {
   onClose: () => void; // Function to close the sidebar
 }
 
-const SideBar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   return (
     <div className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>
 
@@ -62,4 +62,4 @@ const SideBar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default SideBar;
+export default Sidebar;

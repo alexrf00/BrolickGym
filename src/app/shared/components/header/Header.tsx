@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import '@/app/shared/components/header/header.scss';
-import SideBar from '@/app/shared/components/sideBar/SideBar';
+import Sidebar from '@/app/shared/components/sideBar/Sidebar';
 import Image from 'next/image';
 
 const Header = () => {
@@ -46,7 +46,7 @@ const Header = () => {
         </div>
 
         {/* Sidebar Component */}
-        <SideBar isOpen={menuOpen} onClose={closeMenu} />
+        <Sidebar isOpen={menuOpen} onClose={closeMenu} />
       </nav>
   );
 };
