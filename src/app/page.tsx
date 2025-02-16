@@ -1,7 +1,5 @@
 import GoogleMapLocationComponent from "@/app/shared/components/googleMap/GoogleMapLocation";
 import Hero from '@/app/shared/components/hero/Hero';
-import GymCulture from '@/app/shared/components/gymCulture/GymCulture';
-
 import '@/app/page.scss'
 import { FeatureCardProps } from "./shared/components/FeatureCards/types";
 import FeatureCards from "./shared/components/FeatureCards/FeatureCards";

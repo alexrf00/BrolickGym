@@ -25,7 +25,7 @@ export default function FeatureCard({ icon, badge, title, description, details }
         <div className='featureCardBack'>
           <h3>{title} Details</h3>
           <ul>
-            {details.map((detail:any, index:any) => (
+            {details.map((detail:string, index:number) => (
               <li key={index}>{detail}</li>
             ))}
           </ul>
