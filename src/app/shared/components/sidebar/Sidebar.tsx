@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import '@/app/shared/components/sidebar/sideBar.scss';
+import '@/app/shared/components/sidebar/sidebar.scss';
 import Image from 'next/image';
 
 interface SidebarProps {
