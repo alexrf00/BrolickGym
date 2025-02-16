@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import '@/app/shared/components/header/header.scss';
-import Sidebar from '@/app/shared/components/sideBar/SideBar';
+import SideBar from '@/app/shared/components/sideBar/SideBar';
 import Image from 'next/image';
 
 const Header = () => {
@@ -43,12 +43,10 @@ const Header = () => {
               <button>Join Now</button>
             </a>
           </div>
-
-
         </div>
 
         {/* Sidebar Component */}
-        <Sidebar isOpen={menuOpen} onClose={closeMenu} />
+        <SideBar isOpen={menuOpen} onClose={closeMenu} />
       </nav>
   );
 };
