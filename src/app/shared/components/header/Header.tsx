@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import '@/app/shared/components/header/header.scss';
-import Sidebar from '@/app/shared/components/sidebar/Sidebar';
+import Sidebar from '@/app/shared/components/sideBar/SideBar';
 import Image from 'next/image';
 
 const Header = () => {

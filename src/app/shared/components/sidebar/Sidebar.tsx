@@ -9,7 +9,7 @@ interface SidebarProps {
   onClose: () => void; // Function to close the sidebar
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+const SideBar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   return (
     <div className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>
 
@@ -62,4 +62,4 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
