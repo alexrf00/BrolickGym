@@ -20,8 +20,7 @@ const GoogleMapLocation = () => {
     <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
       <GoogleMap mapContainerStyle={containerStyle} center={gymLocation} zoom={15}  options={{
           streetViewControl: false,
-          
-        }}>
+}}>
             <Marker position={gymLocation} />
         </GoogleMap>
     </LoadScript>

@@ -10,10 +10,11 @@
   .burger{
     display: none;
   }
-  .navLink a, .nav-link_button a{
+  .navLink a, .nav-link_button a, .cta button{
     text-decoration: none;
     color: inherit;
-    font-size: 17px;
+    font-weight: 700;
+    font-size: 0.875rem;
   }
   .nav-link_button{
     display: flex;

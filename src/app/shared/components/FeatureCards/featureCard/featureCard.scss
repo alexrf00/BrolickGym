@@ -1,127 +1,66 @@
 .featureCard {
-    --bg-opacity: 1;  
+  cursor: pointer;
 
-    /* If you prefer the newer syntax: */
-    background-color: rgb(255 255 255 / var(--bg-opacity));
-    background: linear-gradient(#f3f4f6, #fff);
-    padding: 6rem 0;
-    cursor: pointer;
-    perspective: 1500px;
-    height: 400px;
-  
-    &.flipped {
-      .featureCardInner {
-        transform: rotateY(180deg);
-      }
-    }
-  
-    .featureCardInner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-    }
-  
+
+  min-height: 15rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  .cardInner{
+
+
     .featureCardFront,
-    .featureCardBack {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 0.5rem;
-      padding: 2rem;
-      box-shadow: var(--card-shadow);
-      background-color: var(--card-bg);
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .featureCardBack {
-      transform: rotateY(180deg);
-      justify-content: space-between;
-  
-      ul {
-        text-align: left;
-        padding-left: 1.5rem;
-        margin-bottom: 1rem;
-      }
-    }
-  
-    h3 {
-        margin-bottom: .75rem;
-        font-size: 1.25rem;
-      color: #1f2937;
-      font-weight: inherit;
-    }
-  
-    p {
-      color: #6b7280;
-      margin-bottom: 1.5rem;
-    }
-  
-    @media (max-width: 768px) {
-      height: auto;
-  
-      .featureCardFront,
-      .featureCardBack {
-        position: static;
-        height: auto;
-      }
-  
-      .featureCardBack {
-        display: none;
-      }
-  
-      &.flipped {
-        .featureCardFront {
-          display: none;
-        }
-  
-        .featureCardBack {
-          display: flex;
-        }
-      }
-    }
-  }
-  
-  .iconWrapper {
+  .featureCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    background-color: var(--card-bg);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
-    height: 3rem;
-    background-color: rgba(59, 130, 246, 0.1);
-    border-radius: 50%;
+    flex-direction: column;
   }
-  
-  .badge {
-    background-color: #14b8a61a;
-    color: #14b8a6;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    font-size: 0.875rem;
-    font-weight: 600;
+  .featureCardBack {
+    transform: rotateY(180deg);
+    justify-content: space-between;
   }
-  
-  .learnMore {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    .arrow {
-      margin-left: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-  
     &:hover {
-      .arrow {
-        transform: translateX(5px);
+      transform: translateY(-10px);
+    }
+    &:active {
+      transform: translateY(-8px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .featureIcon {
+      color: #3498db;
+      margin-bottom: 1rem;
+  
+      svg {
+        width: 48px;
+        height: 48px;
       }
     }
-  }
   
+    .featureTitle {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .featureDescription {
+      color: #34495e;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+.flipped {
+  transform: rotateY(180deg);
+}
