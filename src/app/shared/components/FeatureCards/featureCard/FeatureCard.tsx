@@ -5,7 +5,7 @@ import { FeatureCardProps } from '@/app/shared/components/FeatureCards/types/ind
 import { useState } from "react"
 
 
-export default function FeatureCard({ icon, badge, title, description, details }: FeatureCardProps) {
+export default function FeatureCard({ icon, title, description }: FeatureCardProps) {
   const [isFlipped, setIsFlipped] = useState(false)
   return (
     <div  className={`featureCard ${isFlipped ? 'flipped' : ""}`}

@@ -3,8 +3,6 @@ import Hero from '@/app/shared/components/hero/Hero';
 import '@/app/page.scss'
 import { FeatureCardProps } from "./shared/components/FeatureCards/types";
 import FeatureCards from "./shared/components/FeatureCards/FeatureCards";
-import FeatureCard from "./shared/components/FeatureCards/featureCard/FeatureCard";
-// import FeatureCard from "./shared/components/FeatureCards/featureCard/FeatureCard";
 const gymLatitude = 40.6802279; // Replace with actual latitude
 const gymLongitude = -73.8839788; // Replace with actual longitude
 const featureCardProp: FeatureCardProps[] = [
