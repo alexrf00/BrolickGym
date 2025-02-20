@@ -1,66 +1,62 @@
 .featureCard {
-  cursor: pointer;
+  display: flex;
+}
 
-
-  min-height: 15rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-
-  padding: 2rem;
+.cardInner {
+  padding: 1rem;
   text-align: center;
+  padding: 2rem;
+  min-height: 15rem;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  .cardInner{
 
+  &:hover {
+    background-image: linear-gradient(to bottom right, #dbeafe , #ccfbf1);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-    .featureCardFront,
-  .featureCardBack {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  }
+
+  .cardFront,
+  .cardBack {
     backface-visibility: hidden;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    box-shadow: var(--card-shadow);
-    background-color: var(--card-bg);
-    display: flex;
-    flex-direction: column;
   }
-  .featureCardBack {
+
+  .cardBack {
+    color: black;
     transform: rotateY(180deg);
-    justify-content: space-between;
+    background: linear-gradient(90deg, #c9e6e8 0%, #ccefd0 100%);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
-    &:hover {
-      transform: translateY(-10px);
+
+
+  .featureIcon {
+    color: #3498db;
+    margin-bottom: 1rem;
+
+    svg {
+      width: 48px;
+      height: 48px;
     }
-    &:active {
-      transform: translateY(-8px);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .featureIcon {
-      color: #3498db;
-      margin-bottom: 1rem;
-  
-      svg {
-        width: 48px;
-        height: 48px;
-      }
-    }
-  
-    .featureTitle {
-      color: #2c3e50;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-  
-    .featureDescription {
-      color: #34495e;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+  }
+
+  .featureTitle {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .featureDescription {
+    // color: #34495e;
+    color: rgb(75 85 99 / 1);
+    // font-size: 1rem;
+    line-height: 1.5;
+  }
+  p {
+    color: rgb(59 130 246 / 1);
+    font-weight: 500;
   }
 }
-.flipped {
-  transform: rotateY(180deg);
+.flipped .cardInner{
+  transform: rotateY(180deg) translateY(-10px);
+
 }
