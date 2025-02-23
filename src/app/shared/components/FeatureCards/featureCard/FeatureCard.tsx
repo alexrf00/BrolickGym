@@ -9,20 +9,20 @@ export default function FeatureCard({ icon, title, description }: FeatureCardPro
   const [isFlipped, setIsFlipped] = useState(false)
   return (
     <div  className={`featureCard ${isFlipped ? 'flipped' : ""}`}
-    onClick={() => setIsFlipped(!isFlipped)}>
+    >
        <div className='cardInner'>
         <div className='cardFront'>
+          <div className="header">
           <div className='featureIcon'  >{icon}</div>
+          </div>
           <h3 className='featureTitle'>{title}</h3>
           <p className='featureDescription'>{description}</p>
-          <div className="learnMoreWrapper">
-          <p>Learn More</p><p>&rarr;</p>
+          <div className="learnMoreWrapper"onClick={() => setIsFlipped(!isFlipped)}>
+          <p>Learn More</p><p className="arrow">&rarr;</p>
           </div>
 
         </div>
-        <div className='cardBack'>
-          <p>hello</p>
-        </div>
+        
       </div>
     </div>
   )

@@ -39,9 +39,7 @@ const Header = () => {
           <div className="nav-link_button">
             <a href="#">Member Login</a>
 
-            <a href="#" className="cta">
-              <button>Join Now</button>
-            </a>
+              <button className='cta'>Join Now</button>
           </div>
         </div>
 
