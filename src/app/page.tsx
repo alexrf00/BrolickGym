@@ -1,13 +1,11 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import GoogleMapLocationComponent from "@/app/shared/components/googleMap/GoogleMapLocation";
 import Hero from '@/app/shared/components/hero/Hero';
 import '@/app/page.scss';
 import { FeatureCardProps } from "./shared/components/FeatureCards/types";
 import FeatureCards from "./shared/components/FeatureCards/FeatureCards";
 
-const gymLatitude = 40.6802279; // Replace with actual latitude if needed
-const gymLongitude = -73.8839788; // Replace with actual longitude if needed
 
 const featureCardProp: FeatureCardProps[] = [
   {
@@ -96,7 +94,6 @@ const featureCardProp: FeatureCardProps[] = [
 ];
 
 export default function HomePage() {
-  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <div className="home-container">
