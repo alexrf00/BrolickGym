@@ -1,4 +1,4 @@
-'use client';
+"use client"
 import PaymentForm from '@/app/payment/components/PaymentForm';
 
 export default function PaymentPage() {

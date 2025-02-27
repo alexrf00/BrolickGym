@@ -1,10 +1,12 @@
-"use client";
+"use client"
 import React from 'react';
 import GoogleMapLocationComponent from "@/app/shared/components/googleMap/GoogleMapLocation";
 import Hero from '@/app/shared/components/hero/Hero';
 import '@/app/page.scss';
 import { FeatureCardProps } from "./shared/components/FeatureCards/types";
 import FeatureCards from "./shared/components/FeatureCards/FeatureCards";
+import LoginDialog from './shared/components/LoginDialog/LoginDialog';
+import { Button } from '@/components/ui/button';
 
 
 const featureCardProp: FeatureCardProps[] = [
@@ -98,7 +100,14 @@ export default function HomePage() {
   return (
     <div className="home-container">
       <section>
-        <Hero />
+        <Hero
+        callToActionButton={
+        <LoginDialog>
+            <Button size="lg" variant="default" className="text-lg px-8 cta">
+              Start Your Journey
+            </Button>
+          </LoginDialog>}/>
+       
       </section>
       <section className="featureCards-container">
         <FeatureCards featureData={featureCardProp} />

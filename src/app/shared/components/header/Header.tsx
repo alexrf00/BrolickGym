@@ -1,11 +1,14 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import '@/app/shared/components/header/header.scss';
 import Sidebar from '@/app/shared/components/sidebar/Sidebar';
 import Image from 'next/image';
 
-const Header = () => {
+interface HeroContentProps {
+    callToActionButton: ReactNode
+  }
+export default function Header({ callToActionButton }: HeroContentProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -37,9 +40,8 @@ const Header = () => {
           </div>
 
           <div className="nav-link_button">
-            <a href="#">Member Login</a>
-
-              <button className='cta'>Join Now</button>
+              {callToActionButton}
+              {/* <button className='cta'>Join Now</button> */}
           </div>
         </div>
 
@@ -48,5 +50,3 @@ const Header = () => {
       </nav>
   );
 };
-
-export default Header;

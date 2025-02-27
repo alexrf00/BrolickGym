@@ -1,6 +1,10 @@
 
 import '@/app/shared/components/hero/hero.scss'
-const Hero = () => {
+import { ReactNode } from 'react';
+interface HeroContentProps {
+    callToActionButton: ReactNode
+  }
+export default function Hero({ callToActionButton }: HeroContentProps) {
     return (
         <div className="greatingContainer">
             <div className="homeTxt">
@@ -8,12 +12,11 @@ const Hero = () => {
                     Welcome to Brolick Fitness
                 </h1>
                 <p className="invitingTxt">
-                    Your journey to a healthier you starts here. State-of-the-art equipment, expert trainers, and a
-                    motivating atmosphere.
+                Join our community of fitness enthusiasts and start your journey to a healthier, stronger you. Get access to personalized workouts and expert guidance.
                 </p>
+                {callToActionButton}
             </div>
         </div>
     );
 };
 
-export default Hero;

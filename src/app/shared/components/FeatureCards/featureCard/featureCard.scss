@@ -4,6 +4,7 @@
 
 /* Position relative so the pseudo-element can overlay */
 .cardInner {
+  flex: 1;
   background: transparent;
   position: relative;
 
