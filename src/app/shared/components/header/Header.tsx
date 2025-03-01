@@ -1,5 +1,6 @@
 import Link from "next/link"
 import LoginDialog from "@/app/shared/components/LoginDialog/LoginDialog"
+import { Button } from "@/components/ui/button"
 
 const navItems = [
   { href: "#home", label: "Home" },
@@ -21,7 +22,14 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <LoginDialog />
+          <LoginDialog>
+            <Button
+              variant="outline"
+              className="bg-transparent text-white border-red-500 hover:bg-red-500 hover:text-white transition-colors duration-300"
+            >
+              Login
+            </Button>
+          </LoginDialog>
         </div>
       </div>
     </header>

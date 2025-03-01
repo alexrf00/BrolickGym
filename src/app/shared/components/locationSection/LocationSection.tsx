@@ -1,10 +1,10 @@
-import { MapPin, Clock, Phone } from "lucide-react"
+import { MapPin, Clock, Phone, Calendar } from "lucide-react"
 import React from "react"
 import { Button } from "@/components/ui/button"
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 const containerStyle = {
-  width: "600px",
-  height: "400px", // Adjust height as needed
+  width: "100%",
+  height: "100%", // Adjust height as needed
 };
 
 const gymLocation = {
@@ -20,13 +20,13 @@ export default function LocationSection() {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <div className="bg-gray-700 rounded-lg h-80 w-full flex items-center justify-center overflow-hidden">
-            <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
-      <GoogleMap mapContainerStyle={containerStyle} center={gymLocation} zoom={15}  options={{
-          streetViewControl: false,
-}}>
-            <Marker position={gymLocation} />
-        </GoogleMap>
-    </LoadScript>
+              <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
+                <GoogleMap mapContainerStyle={containerStyle} center={gymLocation} zoom={15} options={{
+                  streetViewControl: false,
+                }}>
+                  <Marker position={gymLocation} />
+                </GoogleMap>
+              </LoadScript>
             </div>
           </div>
           <div className="w-full md:w-1/2 md:pl-12">
@@ -40,14 +40,24 @@ export default function LocationSection() {
                 <Phone className="mr-2 text-red-500" />
                 (555) 123-4567
               </p>
-              <p className="flex items-center text-white">
-                <Clock className="mr-2 text-red-500" />
-                Open 24/7
-              </p>
+              <div className="flex items-start text-white">
+                <Clock className="mr-2 text-red-500 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold">Working Hours:</p>
+                  <p className="flex items-center">
+                    <Calendar className="mr-2 text-red-500" size={16} />
+                    Monday - Friday: 5am - 11pm
+                  </p>
+                  <p className="flex items-center">
+                    <Calendar className="mr-2 text-red-500" size={16} />
+                    Saturday - Sunday: 7am - 8pm
+                  </p>
+                </div>
+              </div>
             </div>
             <Button
               variant="outline"
-              className="mt-6 text-white border-red-500 hover:bg-red-500 hover:text-white transition-colors duration-300"
+              className="bg-transparent text-white border-red-500 hover:bg-red-500 hover:text-white transition-colors duration-300"
             >
               Get Directions
             </Button>
