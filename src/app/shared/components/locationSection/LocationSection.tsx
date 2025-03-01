@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { MapPin, Clock, Phone } from "lucide-react"
 import React from "react"
 import { Button } from "@/components/ui/button"

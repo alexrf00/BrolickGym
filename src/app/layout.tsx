@@ -1,16 +1,6 @@
 import './globals.css';
-import Header from '@/app/shared/components/header/Header';
-import { Inter, Oswald } from 'next/font/google';
-import { GeistSans } from 'geist/font/sans';
-import LoginDialog from './shared/components/LoginDialog/LoginDialog';
-import { Button } from '@/components/ui/button';
+import { Inter } from 'next/font/google';
 
-// Define font styles
-const oswald = Oswald({
-  subsets: ['latin'],
-  weight: ['400', '700'], // Choose font weights
-  variable: '--font-oswald', // Custom CSS variable (optional)
-});
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
