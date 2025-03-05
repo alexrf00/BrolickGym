@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="bg-gray-900 py-16 md:py-24">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <ContactInfo />
@@ -21,17 +21,17 @@ export function ContactSection() {
 function ContactInfo() {
   return (
     <div>
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
-      <p className="text-muted-foreground mb-8">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Get In Touch</h2>
+      <p className="text-white mb-8">
         Have questions about our gym or membership options? Contact us and we&apos;ll get back to you as soon as possible.
       </p>
-      <div className="space-y-6">
+      <div className="space-y-6 text-white">
         <ContactInfoItem icon={MapPin} title="Location" content="123 Fitness Street, Gym City, GC 12345" />
         <ContactInfoItem icon={Phone} title="Phone" content="(123) 456-7890" />
         <ContactInfoItem icon={Mail} title="Email" content="info@fitzone.com" />
       </div>
       <div className="mt-8">
-        <h3 className="font-bold mb-4">Follow Us</h3>
+        <h3 className="font-bold mb-4 text-white">Follow Us</h3>
         <div className="flex gap-4">
           <SocialLink href="#" icon={Instagram} />
           <SocialLink href="#" icon={Facebook} />
@@ -48,7 +48,7 @@ function ContactInfoItem({ icon: Icon, title, content }: { icon: React.ElementTy
       <Icon className="h-6 w-6 text-primary mt-0.5" />
       <div>
         <h3 className="font-bold mb-1">{title}</h3>
-        <p className="text-muted-foreground">{content}</p>
+        <p className="text-white">{content}</p>
       </div>
     </div>
   )

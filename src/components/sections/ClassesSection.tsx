@@ -20,7 +20,7 @@ export default function ClassesSection() {
               key={classItem.name}
               className="bg-gray-700 rounded-lg p-6 text-center hover:bg-gray-600 transition-colors"
             >
-              <Dumbbell className="mx-auto mb-4 text-red-500" size={48} />
+              <Dumbbell className="mx-auto mb-4 text-primary" size={48} />
               <h3 className="text-xl font-semibold mb-2 text-white">{classItem.name}</h3>
               <p className="text-gray-300">{classItem.description}</p>
             </div>

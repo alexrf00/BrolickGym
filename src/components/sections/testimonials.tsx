@@ -23,11 +23,11 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-16 md:py-24 bg-muted">
+    <section className="bg-gray-800 py-16 md:py-24">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Members Say</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">What Our Members Say</h2>
+          <p className="text-white max-w-2xl mx-auto">
             Don&#39;t just take our word for it. Here&#39;s what our members have to say about their experience.
           </p>
         </div>

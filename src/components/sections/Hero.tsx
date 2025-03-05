@@ -26,7 +26,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="default"
-            className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full transition-colors duration-300"
+            className="text-primary hover:bg-red-600 text-white px-8 py-3 rounded-full transition-colors duration-300"
           >
             Start Your Journey
           </Button>
