@@ -1,115 +1,39 @@
 "use client"
 import React from 'react';
-import Hero from '@/app/shared/components/hero/Hero';
+import { HeroSection } from '@/components/sections/Hero';
 import '@/app/page.scss';
 // import { FeatureCardProps } from "./shared/components/FeatureCards/types";
-import Header from '@/app/shared/components/header/Header'
-import ClassesSection from '@/app/shared/components/classesSection/ClassesSection'
-import TrainersSection from '@/app/shared/components/trainersSection/TrainersSection'
-import LocationSection from '@/app/shared/components/locationSection/LocationSection'
-import Footer from './shared/components/footer/Footer';
-
-
-// const featureCardProp: FeatureCardProps[] = [
-//   {
-//     icon: (
-//       <svg
-//         xmlns="http://www.w3.org/2000/svg"
-//         width="24" height="24"
-//         viewBox="0 0 24 24"
-//         fill="none" stroke="black"
-//         strokeWidth="2"
-//         strokeLinecap="round"
-//         strokeLinejoin="round"
-//       >
-//         <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-//         <line x1="16" y1="8" x2="2" y2="22"></line>
-//         <line x1="17.5" y1="15" x2="9" y2="15"></line>
-//       </svg>
-//     ),
-//     badge: "Premium",
-//     title: "Cutting-Edge Equipment",
-//     description:
-//       "Experience fitness with our state-of-the-art machines and free weights, designed for optimal performance and results.",
-//     details: [
-//       "Latest cardio machines with integrated screens",
-//       "Full range of free weights up to 150lbs",
-//       "Specialized functional training area",
-//       "Recovery zone with foam rollers and stretch equipment",
-//     ],
-//   },
-//   {
-//     icon: (
-//       <svg
-//         xmlns="http://www.w3.org/2000/svg"
-//         width="24" height="24"
-//         viewBox="0 0 24 24"
-//         fill="none" stroke="black"
-//         strokeWidth="2"
-//         strokeLinecap="round"
-//         strokeLinejoin="round"
-//       >
-//         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-//         <circle cx="9" cy="7" r="4"></circle>
-//         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-//         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-//       </svg>
-//     ),
-//     badge: "Popular",
-//     title: "Expert Personal Training",
-//     description:
-//       "Transform your body and mind with our certified trainers, offering personalized guidance and motivation.",
-//     details: [
-//       "One-on-one personalized sessions",
-//       "Small group training options",
-//       "Nutrition planning and support",
-//       "Progress tracking and goal setting",
-//     ],
-//   },
-//   {
-//     icon: (
-//       <svg
-//         xmlns="http://www.w3.org/2000/svg"
-//         width="24" height="24"
-//         viewBox="0 0 24 24"
-//         fill="none" stroke="black"
-//         strokeWidth="2"
-//         strokeLinecap="round"
-//         strokeLinejoin="round"
-//       >
-//         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-//         <line x1="16" y1="2" x2="16" y2="6"></line>
-//         <line x1="8" y1="2" x2="8" y2="6"></line>
-//         <line x1="3" y1="10" x2="21" y2="10"></line>
-//       </svg>
-//     ),
-//     badge: "Flexible",
-//     title: "Diverse Class Schedule",
-//     description:
-//       "Energize your routine with our wide range of group fitness classes, from high-intensity workouts to mindful practices.",
-//     details: [
-//       "High-Intensity Interval Training (HIIT)",
-//       "Yoga and Pilates sessions",
-//       "Spin classes with virtual rides",
-//       "Strength and conditioning workshops",
-//     ],
-//   },
-// ];
+import {Header} from '@/components/layout/Header'
+import ClassesSection from '@/components/sections/ClassesSection'
+import LocationSection from '@/components/sections/LocationSection'
+// import { useSession } from 'next-auth/react';
+import { ServicesSection } from '@/components/sections/Services';
+import { AboutSection } from '@/components/sections/about';
+import { MembershipSection } from '@/components/sections/membership';
+import TrainersSectionV2 from '@/components/sections/TrainersV2';
+import { CTASection } from '@/components/sections/cta';
+import { ContactSection } from '@/components/sections/contact';
+import { TestimonialsSection } from '@/components/sections/testimonials';
+import { TrainersSection } from '@/components/sections/Trainers';
+import { Footer } from '@/components/layout/Footer';
 
 export default function HomePage() {
-//   <LoginDialog>
-//   <Button size="lg" variant="default" className="text-lg px-8 cta">
-//     Start Your Journey
-//   </Button>
-// </LoginDialog>}/>
+  // const { data: session } = useSession()
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main>
-        <Hero />
+      <main className="flex-1">
+        <HeroSection />
+        <ServicesSection />
+        <AboutSection />
+        <LocationSection />
+        <MembershipSection />
         <ClassesSection />
         <TrainersSection />
-        <LocationSection />
+        <TrainersSectionV2 />
+        <CTASection />
+        <ContactSection />
+        <TestimonialsSection />
       </main>
       <Footer />
     </div>

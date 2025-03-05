@@ -7,7 +7,7 @@ const trainers = [
   { name: "Mike Johnson", title: "Certified Personal Trainer" },
 ]
 
-export default function TrainersSection() {
+export default function TrainersSectionV2() {
   return (
     <section id="trainers" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">

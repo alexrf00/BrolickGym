@@ -2,7 +2,7 @@ import Image from "next/image"
 import LoginDialog from '@/app/shared/components/LoginDialog/LoginDialog'
 import { Button } from "@/components/ui/button"
 
-export default function Hero() {
+export function HeroSection() {
   return (
     <section id="home" className="relative h-screen flex items-center">
       <Image
