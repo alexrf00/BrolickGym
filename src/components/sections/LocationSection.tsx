@@ -15,9 +15,9 @@ const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || "";
 export default function LocationSection() {
   return (
     <section id="location" className="py-20 bg-gray-800">
-      <div className="container mx-auto px-4">
+      <div className="flex flex-col container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">Find Us</h2>
-        <div className="container mx-20 flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <div className="bg-gray-700 rounded-lg h-80 w-full flex items-center justify-center overflow-hidden">
               <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
