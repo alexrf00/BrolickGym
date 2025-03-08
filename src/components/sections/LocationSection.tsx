@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button"
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 const containerStyle = {
   width: "100%",
-  height: "100%", // Adjust height as needed
+  height: "100%", 
 };
 
 const gymLocation = {
-  lat: 40.6802279, // Replace with actual latitude
-  lng: -73.8839788, // Replace with actual longitude
+  lat: 40.6802279, 
+  lng: -73.8839788, 
 };
 const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_MAP_PLATFORM_API_KEY || "";
 export default function LocationSection() {

@@ -5,7 +5,6 @@ import { HeroSection } from '@/components/sections/HeroV22';
 import {Header} from '@/components/layout/Header'
 // import ClassesSection from '@/components/sections/ClassesSection'
 import LocationSection from '@/components/sections/LocationSection'
-// import { useSession } from 'next-auth/react';
 import { ServicesSection } from '@/components/sections/Services';
 import { AboutSection } from '@/components/sections/about';
 // import { MembershipSection } from '@/components/sections/membership';
@@ -17,7 +16,6 @@ import { TrainersSection } from '@/components/sections/Trainers';
 import { Footer } from '@/components/layout/Footer';
 
 export default function HomePage() {
-  // const { data: session } = useSession()
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

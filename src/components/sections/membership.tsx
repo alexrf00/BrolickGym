@@ -1,8 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
-import { useSession } from "next-auth/react"
-import { Session } from "next-auth"
+import { useAuth } from "@/contexts/auth-context"
 
 const plans = [
   {
@@ -44,7 +43,7 @@ const plans = [
 ]
 
 export function MembershipSection() {
-  const { data: session } = useSession()
+  const { user } = useAuth()
 
   return (
     <section id="membership" className="py-16 md:py-24 bg-muted">
@@ -57,25 +56,18 @@ export function MembershipSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <MembershipPlan key={index} {...plan} session={session} />
+            <MembershipPlan key={index} {...plan} user={user} />
           ))}
         </div>
       </div>
     </section>
   )
 }
-interface MembershipPlanProps {
-    name: string;
-    price: number;
-    features: (string | { disabled: boolean; text: string })[];
-    popular: boolean;
-    session?: Session | null; // ✅ Change session type to allow Session or null
-  }
-  
-function MembershipPlan({ name, price, features, popular, session }: MembershipPlanProps) {
+
+function MembershipPlan({ name, price, features, popular, user }: any) {
   return (
     <div
-      className={`rounded-lg p-8 shadow-sm ${popular ? "bg-primary text-primary-foreground" : "bg-background border"}`}
+      className={`relative rounded-lg p-8 shadow-sm ${popular ? "bg-primary text-primary-foreground" : "bg-background border"}`}
     >
       {popular && (
         <div className="absolute top-0 right-0 bg-background text-foreground text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
@@ -110,7 +102,7 @@ function MembershipPlan({ name, price, features, popular, session }: MembershipP
         ))}
       </ul>
       <Button className="w-full" variant={popular ? "secondary" : "default"} asChild>
-        <Link href={session ? "/dashboard/membership" : "/signup"}>{session ? "Upgrade Plan" : "Choose Plan"}</Link>
+        <Link href={user ? "/dashboard/membership" : "/signup"}>{user ? "Upgrade Plan" : "Choose Plan"}</Link>
       </Button>
     </div>
   )
