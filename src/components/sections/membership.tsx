@@ -2,6 +2,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
 import { useAuth } from "@/contexts/auth-context"
+import { User } from "firebase/auth";
+interface MembershipPlanProps {
+  name: string;
+  price: number;
+  features: (string | { disabled: boolean; text: string })[];
+  popular: boolean;
+  user?: User | null;
+}
 
 const plans = [
   {
@@ -64,7 +72,7 @@ export function MembershipSection() {
   )
 }
 
-function MembershipPlan({ name, price, features, popular, user }: any) {
+function MembershipPlan({ name, price, features, popular, user }: MembershipPlanProps) {
   return (
     <div
       className={`relative rounded-lg p-8 shadow-sm ${popular ? "bg-primary text-primary-foreground" : "bg-background border"}`}
