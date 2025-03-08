@@ -3,16 +3,18 @@
 import type React from "react"
 
 import { useState } from "react"
-import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Dumbbell, Mail, Lock, User, Github, ChromeIcon as Google } from "lucide-react"
+import { Dumbbell, Mail, Lock, User, Chrome } from "lucide-react"
 import Link from "next/link"
+import { useAuth } from "@/contexts/auth-context"
+import { AuthError } from "firebase/auth"
 
 export default function SignupPage() {
   const router = useRouter()
+  const { signUp, signInWithGoogle } = useAuth()
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -24,24 +26,29 @@ export default function SignupPage() {
     setIsLoading(true)
     setError("")
 
-    // In a real application, you would register the user here
-    // For this demo, we'll just simulate a successful registration
     try {
-      // Simulate API call delay
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      // After successful registration, sign in the user
-      await signIn("credentials", {
-        redirect: false,
-        email,
-        password,
-      })
-
+      await signUp(email, password, name)
       router.push("/")
-      router.refresh()
-    } catch {
-      setError("Something went wrong. Please try again.")
-      setIsLoading(false)
+    } catch (error: unknown) {
+      const authError = error as AuthError;
+      setError(authError.message || "Failed to sign in. Please check your credentials.");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  const handleGoogleSignIn = async () => {
+    setIsLoading(true)
+    setError("")
+
+    try {
+      await signInWithGoogle()
+      router.push("/")
+    } catch (error: unknown) {
+      const authError = error as AuthError;
+      setError(authError.message || "Failed to sign in with Google");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -153,14 +160,10 @@ export default function SignupPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <Button variant="outline" onClick={() => signIn("google", { callbackUrl: "/" })} type="button">
-            <Google className="mr-2 h-4 w-4" />
+        <div className="grid grid-cols-1 gap-4">
+          <Button variant="outline" onClick={handleGoogleSignIn} type="button" disabled={isLoading}>
+            <Chrome className="mr-2 h-4 w-4" />
             Google
-          </Button>
-          <Button variant="outline" onClick={() => signIn("github", { callbackUrl: "/" })} type="button">
-            <Github className="mr-2 h-4 w-4" />
-            GitHub
           </Button>
         </div>
 

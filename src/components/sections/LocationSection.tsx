@@ -11,7 +11,7 @@ const gymLocation = {
   lat: 40.6802279, // Replace with actual latitude
   lng: -73.8839788, // Replace with actual longitude
 };
-const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || "";
+const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_MAP_PLATFORM_API_KEY || "";
 export default function LocationSection() {
   return (
     <section id="location" className="py-20 bg-gray-800">
