@@ -1,13 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useSession } from "next-auth/react"
+import { useAuth } from "@/contexts/auth-context"
 
 export function HeroSection() {
-  const { data: session } = useSession()
+  const { user } = useAuth()
 
   return (
-    <section className="relative h-screen flex items-center">
+    <section className="relative py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="/assets/images/manRowingB.png"
@@ -26,7 +26,7 @@ export function HeroSection() {
           trainers and premium equipment.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          {session ? (
+          {user ? (
             <Button size="lg">View Your Dashboard</Button>
           ) : (
             <Button size="lg" asChild>

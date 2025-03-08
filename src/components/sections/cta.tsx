@@ -1,9 +1,9 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useSession } from "next-auth/react"
+import { useAuth } from "@/contexts/auth-context"
 
 export function CTASection() {
-  const { data: session } = useSession()
+  const { user } = useAuth()
 
   return (
     <section className="py-16 md:py-24 bg-primary text-primary-foreground">
@@ -13,7 +13,7 @@ export function CTASection() {
           Join FitZone today and take the first step towards a healthier, stronger you.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          {session ? (
+          {user ? (
             <Button variant="secondary" size="lg" asChild>
               <Link href="/dashboard">Go to Dashboard</Link>
             </Button>

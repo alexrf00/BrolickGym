@@ -3,15 +3,17 @@
 import type React from "react"
 
 import { useState } from "react"
-import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Dumbbell, Mail, Lock, Github, ChromeIcon as Google } from "lucide-react"
+import { Dumbbell, Mail, Lock, Chrome } from "lucide-react"
 import Link from "next/link"
+import { useAuth } from "@/contexts/auth-context"
+import { AuthError } from "firebase/auth"
 
 export default function LoginPage() {
   const router = useRouter()
+  const { signIn, signInWithGoogle } = useAuth()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -23,22 +25,27 @@ export default function LoginPage() {
     setError("")
 
     try {
-      const result = await signIn("credentials", {
-        redirect: false,
-        email,
-        password,
-      })
-
-      if (result?.error) {
-        setError("Invalid email or password")
-        setIsLoading(false)
-        return
-      }
-
+      await signIn(email, password)
       router.push("/")
-      router.refresh()
-    } catch {
-      setError("Something went wrong. Please try again.")
+    } catch (error: unknown) {
+      const authError = error as AuthError;
+      setError(authError.message || "Failed to sign in. Please check your credentials.");
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleGoogleSignIn = async () => {
+    setIsLoading(true)
+    setError("")
+
+    try {
+      await signInWithGoogle()
+      router.push("/")
+    } catch (error: unknown) {
+      const authError = error as AuthError;
+      setError(authError.message || "Failed to sign in with Google");
+    } finally {
       setIsLoading(false)
     }
   }
@@ -119,14 +126,10 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <Button variant="outline" onClick={() => signIn("google", { callbackUrl: "/" })} type="button">
-            <Google className="mr-2 h-4 w-4" />
+        <div className="grid grid-cols-1 gap-4">
+          <Button variant="outline" onClick={handleGoogleSignIn} type="button" disabled={isLoading}>
+            <Chrome className="mr-2 h-4 w-4" />
             Google
-          </Button>
-          <Button variant="outline" onClick={() => signIn("github", { callbackUrl: "/" })} type="button">
-            <Github className="mr-2 h-4 w-4" />
-            GitHub
           </Button>
         </div>
 

@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
-import { HeroSection } from '@/components/sections/Hero';
-import '@/app/page.scss';
+import { HeroSection } from '@/components/sections/HeroV22';
 // import { FeatureCardProps } from "./shared/components/FeatureCards/types";
 import {Header} from '@/components/layout/Header'
 // import ClassesSection from '@/components/sections/ClassesSection'
