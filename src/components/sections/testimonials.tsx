@@ -54,7 +54,7 @@ function TestimonialCard({ content, author, memberSince }: { content: string; au
       <p className="text-muted-foreground mb-4">{content}</p>
       <div className="flex items-center">
         <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-          <Image src="/placeholder.svg?height=100&width=100" alt={author} fill className="object-cover" />
+          <Image src="/assets/images/manRowingB.png" alt={author} fill className="object-cover" />
         </div>
         <div>
           <h4 className="font-bold">{author}</h4>

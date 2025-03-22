@@ -15,7 +15,7 @@ export function AboutSection() {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative h-[400px] rounded-lg overflow-hidden">
-            <Image src="/placeholder.svg?height=800&width=600" alt="About our gym" fill className="object-cover" />
+            <Image src="/assets/images/manRowingB.png" alt="About our gym" fill className="object-cover" />
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">About FitZone</h2>

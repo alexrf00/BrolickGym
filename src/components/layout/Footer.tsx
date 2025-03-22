@@ -67,8 +67,8 @@ function FooterLinkSection({ title, links }: { title: string; links: { href: str
     <div>
       <h3 className="font-bold text-lg mb-4">{title}</h3>
       <ul className="space-y-2">
-        {links.map((link) => (
-          <li key={link.href}>
+        {links.map((link, index) => (
+          <li key={index}>
             <Link href={link.href} className="text-muted-foreground hover:text-primary">
               {link.label}
             </Link>
