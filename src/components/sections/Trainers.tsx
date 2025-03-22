@@ -47,7 +47,7 @@ function TrainerCard({ name, specialty, description }: { name: string; specialty
   return (
     <div className="bg-background rounded-lg overflow-hidden shadow-sm">
       <div className="relative h-64">
-        <Image src="/placeholder.svg?height=400&width=300" alt={name} fill className="object-cover" />
+        <Image src="/assets/images/manRowingB.png" alt={name} fill className="object-cover" />
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold mb-1">{name}</h3>
