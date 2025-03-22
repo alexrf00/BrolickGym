@@ -104,7 +104,7 @@ function ContactForm() {
       } else {
         setResponse(data.error || "Something went wrong. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setResponse("Failed to send message. Please try again.");
     }
 
