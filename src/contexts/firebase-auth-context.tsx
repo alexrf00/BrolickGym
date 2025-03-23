@@ -1,11 +1,9 @@
 "use client"
 
 import type React from "react"
-
 import { createContext, useContext, useEffect, useState } from "react"
 import {
   type User,
-  type UserCredential,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -19,9 +17,9 @@ import { auth } from "@/lib/firebase"
 interface AuthContextType {
   user: User | null
   loading: boolean
-  signUp: (email: string, password: string, name: string) => Promise<UserCredential>
-  signIn: (email: string, password: string) => Promise<UserCredential>
-  signInWithGoogle: () => Promise<UserCredential>
+  signUp: (email: string, password: string, name: string) => Promise<void>
+  signIn: (email: string, password: string) => Promise<void>
+  signInWithGoogle: () => Promise<void>
   logout: () => Promise<void>
 }
 
@@ -42,28 +40,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signUp = async (email: string, password: string, name: string) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-
-    // Update the user's profile with their name
     if (userCredential.user) {
       await updateProfile(userCredential.user, {
         displayName: name,
       })
     }
-
-    return userCredential
   }
 
-  const signIn = (email: string, password: string) => {
-    return signInWithEmailAndPassword(auth, email, password)
+  const signIn = async (email: string, password: string) => {
+    await signInWithEmailAndPassword(auth, email, password)
   }
 
-  const signInWithGoogle = () => {
+  const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider()
-    return signInWithPopup(auth, provider)
+    await signInWithPopup(auth, provider)
   }
 
-  const logout = () => {
-    return signOut(auth)
+  const logout = async () => {
+    await signOut(auth)
   }
 
   const value = {

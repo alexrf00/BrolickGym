@@ -1,4 +1,4 @@
-import { AuthProvider } from "@/contexts/auth-context"
+import { AuthProvider } from "@/contexts/firebase-auth-context"
 import './globals.css';
 
 export const metadata = {
