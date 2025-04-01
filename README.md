@@ -1,4 +1,4 @@
-## Doppler documentation
+## Infisical documentation
 - https://infisical.com/docs/cli/overview
 
 ## Getting Started
