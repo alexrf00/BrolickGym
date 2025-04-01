@@ -5,5 +5,6 @@ export default function DashboardPage() {
         <p>Welcome to your dashboard!</p>
       </div>
     );
+    
   }
   
