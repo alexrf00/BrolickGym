@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Dumbbell, Mail, Lock, User, Chrome } from "lucide-react"
 import Link from "next/link"
-import { useAuth } from "@/contexts/firebase-auth-context"
+import { useAuth } from "@/lib/providers/auth-provider"
 import { AuthError } from "firebase/auth"
 
 export default function SignupPage() {

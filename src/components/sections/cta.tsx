@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useAuth } from "@/contexts/firebase-auth-context"
+import { useAuth } from "@/lib/providers/auth-provider"
 
 export function CTASection() {
   const { user } = useAuth()

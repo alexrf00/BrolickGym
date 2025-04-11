@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useAuth } from "@/contexts/firebase-auth-context"
+import { useAuth } from "@/lib/providers/auth-provider"
 
 export function HeroSection() {
   const { user } = useAuth()

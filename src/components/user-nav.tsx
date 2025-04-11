@@ -11,18 +11,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useAuth } from "@/contexts/firebase-auth-context"
+import { useAuth } from "@/lib/providers/auth-provider"
 import Link from "next/link"
 import { CreditCard, LogOut, Settings, User } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 export function UserNav() {
-  const { user, logout } = useAuth()
+  const { user, signOut } = useAuth()
   const router = useRouter()
 
   const handleLogout = async () => {
     try {
-      await logout()
+      await signOut()
       router.push("/")
     } catch (error) {
       console.error("Failed to log out", error)

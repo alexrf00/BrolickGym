@@ -11,8 +11,8 @@ const gymLocation = {
   lat: 40.6802279, 
   lng: -73.8839788, 
 };
-const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_MAP_PLATFORM_API_KEY || "";
 export default function LocationSection() {
+  const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_MAP_PLATFORM_API_KEY || "";
   return (
     <section id="location" className="py-20 bg-gray-800">
       <div className="flex flex-col container mx-auto px-4">

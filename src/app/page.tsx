@@ -2,7 +2,7 @@
 import React from 'react';
 import { HeroSection } from '@/components/sections/HeroV22';
 // import { FeatureCardProps } from "./shared/components/FeatureCards/types";
-import {Header} from '@/components/layout/Header'
+import { Header } from '@/components/layout/header'
 // import ClassesSection from '@/components/sections/ClassesSection'
 import LocationSection from '@/components/sections/LocationSection'
 import { ServicesSection } from '@/components/sections/Services';
@@ -14,6 +14,7 @@ import { ContactSection } from '@/components/sections/contact';
 import { TestimonialsSection } from '@/components/sections/testimonials';
 import { TrainersSection } from '@/components/sections/Trainers';
 import { Footer } from '@/components/layout/Footer';
+import { SubscriptionPlans } from '@/features/subscriptions/components/subscription-plans';
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <SubscriptionPlans />
         <ServicesSection />
         <AboutSection />
         <LocationSection />
