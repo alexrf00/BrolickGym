@@ -1,8 +1,8 @@
 export const SUBSCRIPTION_PLAN = {
-    id: "premium-membership",
-    name: "Premium Membership",
+    id: "basic",
+    name: "Premium",
     price: 75,
-    description: "Full access to all gym facilities and classes",
+    description: "Full access to all gym facilities",
     features: [
       "24/7 gym access",
       "All equipment usage",

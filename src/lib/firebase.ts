@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getAuth, GoogleAuthProvider } from "firebase/auth"
+import { connectAuthEmulator, getAuth, GoogleAuthProvider } from "firebase/auth"
 import { getFunctions, httpsCallable } from "firebase/functions"
 
 // Your Firebase configuration
@@ -17,6 +17,9 @@ const app = initializeApp(firebaseConfig)
 
 // Initialize Firebase services
 export const auth = getAuth(app)
+if (process.env.NEXT_PUBLIC_USE_FIREBASE_EMULATOR === 'true') {
+  connectAuthEmulator(auth, 'http://127.0.0.1:9099');
+}
 export const functions = getFunctions(app)
 export const googleProvider = new GoogleAuthProvider()
 

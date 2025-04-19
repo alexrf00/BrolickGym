@@ -3,7 +3,8 @@ export interface Subscription {
     status: string
     planName: string
     currentPeriodEnd: string
-    amount: number
+    currentPeriodStart: string
+    subscriptionAmount: number
     interval: string
   }
   

@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      {/* <main className="flex-1"> */}
         <HeroSection />
         <SubscriptionPlans />
         <ServicesSection />
@@ -33,7 +33,7 @@ export default function HomePage() {
         <CTASection />
         <ContactSection />
         <TestimonialsSection />
-      </main>
+      {/* </main> */}
       <Footer />
     </div>
   );

@@ -42,6 +42,7 @@ export default function SuccessPage() {
         }
 
         const data = await res.json();
+        console.log("data: ",data)
         setSubscription(data);
       } catch (err) {
         setError('Failed to verify subscription');

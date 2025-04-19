@@ -16,16 +16,17 @@ export async function getSubscription(subscriptionId: string): Promise<Subscript
 
     // Get the price
     const price = subscription.items.data[0].price
-    const amount = price.unit_amount ? price.unit_amount / 100 : 75
+    const subscriptionAmount = price.unit_amount ? price.unit_amount / 100 : 75
 
     // Format the response
     return {
       id: subscription.id,
       planName,
-      amount,
+      subscriptionAmount,
       interval: "month",
       status: subscription.status,
       currentPeriodEnd: new Date(subscription.current_period_end * 1000).toISOString(),
+      currentPeriodStart: new Date(subscription.current_period_start * 1000).toISOString(),
     }
   } catch (error) {
     console.error("Error getting subscription:", error)
